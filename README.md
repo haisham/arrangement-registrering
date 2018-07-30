@@ -3,9 +3,9 @@ using Angular4/PHP-Laravel
 
 Server requirement:
 PHP 7
-Laravel min. 5.3
-Nodejs CLI 
-NPM CLI
+Laravel min. 5.3<br/>
+Nodejs CLI <br/>
+NPM CLI<br/>
 
 <h1>Setup API Server:</h1>
 Laravel PHP framework<br/>
