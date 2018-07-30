@@ -4,9 +4,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { RegisterationOverviewComponent } from './registeration-overview/registeration-overview.component';
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -40,7 +37,7 @@ export class AppComponent {
   }
 
 
-
+ //initialize app with all available events. 
   onLoad() {
     var result = this._eventService.getEvents();
     result.subscribe((data) => {
@@ -56,16 +53,20 @@ export class AppComponent {
     });
 
   }
+  
+  //open modal for registration for an even
   registerUser(Event) {
     const modal =  this._modalService.open(RegisterUserComponent);
     modal.componentInstance.Event = Event;
   }
 
-   registerationOverview(Event) {
+  //get registrations overview
+  registerationOverview(Event) {
     const modal =  this._modalService.open(RegisterationOverviewComponent);
     modal.componentInstance.Event = Event;
   }
 
+  //pagination option, if needed.
   pageNumber(_number) {
     this.current_page = _number;
     if (this.current_page == 1) {
@@ -79,8 +80,8 @@ export class AppComponent {
         this.disableNext = true;
     }
     var result = this._eventService.getMoreEvents(this.current_page);
-    result.subscribe((data) => {
-        this.Events = data.data;
+        result.subscribe((data) => {
+          this.Events = data.data;
         });
 
   }
