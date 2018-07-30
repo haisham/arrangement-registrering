@@ -67,7 +67,8 @@ export class RegisterUserComponent implements OnInit {
 
         },
       (errorData) => {
-
+                this.errorMessage = true;
+                this.errorMessageText = "Hov. der sket en fejl :(";
       });
   }
 
