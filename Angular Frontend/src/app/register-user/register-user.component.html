@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h4 class="modal-title">Tilmeld bruger</h4>  
+  <button type="button" class="close" aria-label="Close" (click)="closeUserRegisterModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <ngb-alert *ngIf="successMessage" type="success" [dismissible]="false">{{ successMessageText }}</ngb-alert>
+    <ngb-alert *ngIf="errorMessage" type="warning" [dismissible]="false">{{ errorMessageText }}</ngb-alert>
+
+    <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+         <div class="form-group">
+             <input class="form-control" type = "text" name = "fullname" placeholder = "Fulde navn (mindst to bogstaver)" formControlName = "fullname" />
+         </div>
+         <div class="form-group">
+             <input class="form-control" type = "text" name = "email" placeholder = "Email (skal være gyldig)" formControlName = "email" />
+         </div>
+         <div class="form-group">
+             <input class="form-control" type = "text" name = "phone" placeholder = "Telefon nummer" formControlName = "phone" />
+         </div>
+      <br/>
+      <input class="btn btn-primary" type = "submit" [disabled] = "!formdata.valid" value = "Tilmeld" />
+      
+   </form>
+
+</div>

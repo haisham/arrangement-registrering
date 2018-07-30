@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div *ngIf="Events && Events.length > 0">
+        <h2 class="py-2">{{mainTitle}}</h2>
+        <hr>
+        <div class="row card-group">
+            <div class="col-sm-6 py-2 d-flex align-items-stretch" *ngFor="let Event of Events">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h5 class="float-left">{{Event.name}}</h5> <span class="float-right"><i (click)="registerationOverview(Event)" class="fa fa-info-circle"></i></span>
+                    </div>
+                    <div class="card-body h-100">
+                        <p class="card-text p-4">{{Event.description}}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button class="btn btn-primary" (click)="registerUser(Event)">Tilmeld</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
