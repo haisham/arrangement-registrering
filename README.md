@@ -10,7 +10,7 @@ NPM CLI
 <h1>Setup API Server:</h1>
 Laravel PHP framework<br/>
 <b>Installation instructions:</b><br/>
-Clone directory "Laravel backend" onto the server
+Clone directory "Laravel backend" onto the server, 
 update config/database.php with database authentication info<br/>
 Run following commands using artisan console<br/>
 php artisan migrate (this will create tables required in db)<br/>
